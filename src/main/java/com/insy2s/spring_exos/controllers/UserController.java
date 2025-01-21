@@ -1,14 +1,17 @@
 package com.insy2s.spring_exos.controllers;
 
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 @RestController
+@RequestMapping("/user")
 public class UserController {
     //Static map of users
     private static final Map<Integer, String> allUsers;
@@ -23,20 +26,20 @@ public class UserController {
     }
 
     //http://localhost:8081/user/all
-    @GetMapping("/user/all")
-    public ResponseEntity<List<String>> getAllUsers(){
+    @GetMapping("/all")
+    public List<String> getAllUsers(){
         List<String> list = new ArrayList<>();
         for (Integer integer : allUsers.keySet()) {
             list.add(allUsers.get(integer));
         }
-        return ResponseEntity.ok(list);
+        return list;
     }
 
     //http://localhost:8081/user/1
     //http://localhost:8081/user/10
-    @GetMapping("/user/{id}")
-    public ResponseEntity<String> getUserById(@PathVariable Integer id){
-        if(id == null || allUsers.get(id)==null) return ResponseEntity.status(404).body("Erreur : Utilisateur inconnu.");
-        return ResponseEntity.ok("Utilisateur : "+allUsers.get(id));
+    @GetMapping("/{id}")
+    public String getUserById(@PathVariable Integer id){
+        if(id == null || allUsers.get(id)==null) return "Erreur : Utilisateur inconnu.";
+        return "Utilisateur : "+allUsers.get(id);
     }
 }
