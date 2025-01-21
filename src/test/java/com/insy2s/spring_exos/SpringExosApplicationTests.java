@@ -1,4 +1,4 @@
-package com.insy2s.spring_firstproject;
+package com.insy2s.spring_exos;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
