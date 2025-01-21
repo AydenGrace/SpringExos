@@ -18,7 +18,7 @@ public class PostController {
         return ResponseEntity.ok(allPosts);
     }
 
-    @PostMapping("")
+    @PostMapping
     public ResponseEntity<String> postPost(@RequestBody Post body){
         allPosts.put(allPosts.size(),body);
         return ResponseEntity.status(HttpStatus.CREATED).body("Réservation confirmée avec l'ID "+(allPosts.size()-1));

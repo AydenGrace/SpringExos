@@ -13,7 +13,7 @@ import java.util.Map;
 public class TaskController {
     private static final Map<Integer, Task> allTasks = new HashMap<>();
 
-    @PostMapping("")
+    @PostMapping
     public ResponseEntity<String> postTask(@RequestBody Task task){
         allTasks.put(allTasks.size(),task);
         return ResponseEntity.status(HttpStatus.CREATED).body("Tâche ajoutée avec l'ID "+(allTasks.size()-1));

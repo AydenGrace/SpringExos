@@ -28,7 +28,7 @@ public class UserController {
         return "Utilisateur : "+allUsers.get(id);
     }
 
-    @PostMapping("")
+    @PostMapping
     public ResponseEntity<String> postUser(@RequestBody User user){
         allUsers.put(allUsers.size(),user);
         return ResponseEntity.status(HttpStatus.CREATED).body("Utilisateur ajoutée avec l'ID "+(allUsers.size()-1));

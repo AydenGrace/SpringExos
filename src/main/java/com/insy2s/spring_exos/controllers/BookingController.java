@@ -18,7 +18,7 @@ public class BookingController {
         return ResponseEntity.ok(allBooks);
     }
 
-    @PostMapping("")
+    @PostMapping
     public ResponseEntity<String> postBook(@RequestBody Book body){
         allBooks.put(allBooks.size(),body);
         return ResponseEntity.status(HttpStatus.CREATED).body("Réservation confirmée avec l'ID "+(allBooks.size()-1));

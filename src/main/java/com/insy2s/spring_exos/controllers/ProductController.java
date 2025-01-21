@@ -19,7 +19,7 @@ public class ProductController {
         return ResponseEntity.ok(allProducts);
     }
 
-    @PostMapping("")
+    @PostMapping
     public ResponseEntity<String> postProduct(@RequestBody Product body){
         allProducts.put(allProducts.size(),body);
         return ResponseEntity.status(HttpStatus.CREATED).body("Produit ajoutée avec l'ID "+(allProducts.size()-1));
