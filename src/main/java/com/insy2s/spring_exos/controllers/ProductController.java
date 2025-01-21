@@ -22,7 +22,7 @@ public class ProductController {
     //http://localhost:8081/product/add?name=Test2
     //http://localhost:8081/product/add?name=Test3
     @GetMapping("/add")
-    public String putProduct(@RequestParam(value = "name") String name){
+    public String postProduct(@RequestParam(value = "name") String name){
         try{
             allProducts.put(allProducts.size(), name);
             return "Produit '"+name+"' ajouté !";
