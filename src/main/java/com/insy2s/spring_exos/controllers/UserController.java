@@ -27,12 +27,8 @@ public class UserController {
 
     //http://localhost:8081/user/all
     @GetMapping("/all")
-    public List<String> getAllUsers(){
-        List<String> list = new ArrayList<>();
-        for (Integer integer : allUsers.keySet()) {
-            list.add(allUsers.get(integer));
-        }
-        return list;
+    public Map<Integer,String> getAllUsers(){
+        return allUsers;
     }
 
     //http://localhost:8081/user/1

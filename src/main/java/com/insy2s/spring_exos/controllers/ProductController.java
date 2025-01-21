@@ -14,12 +14,8 @@ public class ProductController {
 
     //http://localhost:8081/product/all
     @GetMapping("/all")
-    public List<String> getAllProducts(){
-        List<String> p = new ArrayList<>();
-        for (Integer i : allProducts.keySet()) {
-            p.add(allProducts.get(i));
-        }
-        return p;
+    public Map<Integer,String> getAllProducts(){
+        return allProducts;
     }
 
     //http://localhost:8081/product/add?name=Test
