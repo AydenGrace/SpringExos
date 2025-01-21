@@ -13,7 +13,6 @@ import java.util.Map;
 public class BookingController {
     private static final Map<Integer, Book> allBooks = new HashMap<>();
 
-    //http://localhost:8081/bookings/all
     @GetMapping("/all")
     public ResponseEntity<Map<Integer,Book>> getAllBooks(){
         return ResponseEntity.ok(allBooks);

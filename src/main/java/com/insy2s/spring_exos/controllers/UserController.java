@@ -14,18 +14,14 @@ import java.util.Map;
 @RestController
 @RequestMapping("/user")
 public class UserController {
-    //Static map of users
     private static final Map<Integer, User> allUsers = new HashMap<>();
 
 
-    //http://localhost:8081/user/all
     @GetMapping("/all")
     public ResponseEntity<Map<Integer,User>> getAllUsers(){
         return ResponseEntity.ok(allUsers);
     }
 
-    //http://localhost:8081/user/1
-    //http://localhost:8081/user/10
     @GetMapping("/{id}")
     public String getUserById(@PathVariable Integer id){
         if(id == null || allUsers.get(id)==null) return "Erreur : Utilisateur inconnu.";

@@ -14,7 +14,6 @@ import java.util.Map;
 public class ProductController {
     private static final Map<Integer, Product> allProducts = new HashMap<>();
 
-    //http://localhost:8081/product/all
     @GetMapping("/all")
     public ResponseEntity<Map<Integer,Product>> getAllProducts(){
         return ResponseEntity.ok(allProducts);

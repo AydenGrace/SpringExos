@@ -7,8 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class TemperatureController {
 
-    //http://localhost:8081/convert?celsius=52.1
-    //http://localhost:8081/convert
     @GetMapping("/convert")
     public String convert(@RequestParam(value = "celsius", required = false) Double celsius){
         if(celsius==null) celsius=0.0;
